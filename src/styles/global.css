@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-r from-yellow-500 to-black  text-zinc-900;
+  -webkit-font-smoothing: antialiased;
+}
+
+input {
+  @apply border-solid border-2 border-slate-300 rounded-md;
+  &:focus {
+    @apply border-solid border-2 border-purple-500;
+  }
+}
