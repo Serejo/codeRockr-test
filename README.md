@@ -1,10 +1,6 @@
 # Test to CodersRock
 
-
-<p align="center">
-  <a href="#-como-executar">How to execute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-</p>
-##Project
+## 💻 Projeto
 
 This project is a selection test for codeRockr.
 
