@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Article } from "./Article";
-import { Header } from "./Header";
+import { Article } from "../components/Article";
+import { Header } from "../components/Header";
 import image from "../assets/show-image.png";
+import { Link } from "react-router-dom";
 interface ArticleProps {
   id: string;
   title: string;
@@ -41,7 +42,7 @@ export function Dashboard() {
     const secondRow = [...articles.slice(2, 4)];
     const thirdRow = [...articles.slice(4, 6)];
     console.log(firstRow);
-    setFirstRow(firstRow);
+    setFirstRow([firstRow[0], firstRow[1]]);
     setSecondRow(secondRow);
     setThirdRow(thirdRow);
   }
@@ -54,22 +55,29 @@ export function Dashboard() {
           <img src={image} alt="" className="col-span-2" />
 
           <div className="flex flex-col justify-between col-span-4">
-            <div className="flex flex-col bg-white px-10 py-11  h-full">
-              <div className="">{firstRow[0]?.author}</div>
-              <div className="font-bold text-2xl text-yellow-400">
-                {firstRow[0]?.title}
+            <Link
+              to={{
+                pathname: "/article-details",
+                // state: firstRow[0]<ArticleProps>,
+              }}
+            >
+              <div className="flex flex-col bg-white px-10 py-11 h-full">
+                <div className="">{firstRow[0]?.author}</div>
+                <div className="font-bold text-2xl text-yellow-400 truncate">
+                  {firstRow[0]?.title}
+                </div>
+                <div className="text-sm  truncate">{firstRow[0]?.article}</div>
               </div>
-              <div className="text-sm  truncate">{firstRow[0]?.article}</div>
-            </div>
+            </Link>
             <div> </div>
           </div>
 
           <img src={image} alt="" className="col-span-2" />
 
           <div className="flex flex-col justify-between col-span-4">
-            <div className="flex flex-col bg-white px-10 py-11  h-full">
+            <div className="flex flex-col bg-white px-10 py-11  h-full ">
               <div className="">{firstRow[1]?.author}</div>
-              <div className="font-bold text-2xl text-yellow-400">
+              <div className="font-bold text-2xl text-yellow-400 truncate">
                 {firstRow[1]?.title}
               </div>
               <div className="text-sm truncate">{firstRow[1]?.article}</div>
