@@ -11,6 +11,12 @@ interface ArticleProps {
   authorEmail: string;
   article: string;
 }
+/*
+TODO: 
+- Increment list of articles to article 
+- Add article post
+- Add article details
+*/
 export function Dashboard() {
   const limit = 6;
   const [currentPage, setCurrentPage] = useState(1);
