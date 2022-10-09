@@ -1,6 +1,6 @@
 # Test to CodersRock
 
-## 💻 Projeto
+## 💻 Project
 
 This project is a selection test for codeRockr.
 
